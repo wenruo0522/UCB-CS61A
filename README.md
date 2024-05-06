@@ -9,6 +9,6 @@ SICP In Ptyhon && Fall 2020 &amp;&amp; Spring 2024
 - [Textbook](https://www.composingprograms.com/)
 - [中文翻译](https://composingprograms.netlify.app/)
 - [Course Site](https://cs61a.org/)
-- 教学进度，参照的是 [Spring 2024](./https://cs61a.org/) （[本地存档](./Calendar.md)）
+- 教学进度，参照的是 [Spring 2024](https://cs61a.org/) （[本地存档](./Calendar.md)）
 - [代码本地测试](./articles/using-ok.md/#Test locally)
 
