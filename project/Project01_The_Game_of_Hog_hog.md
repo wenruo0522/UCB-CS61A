@@ -327,6 +327,48 @@ Once you are done unlocking, begin implementing your solution. You can check you
 python3 ok -q 04
 ```
 
+### Problem 5 (4 pt)
 
+Implement the `play` function, which simulates a full game of Hog. Players take turns rolling dice until one of the players reaches the `goal` score, and the final scores of both players are returned by the function.
 
-  
+To determine how many dice are rolled each turn, call the current player's strategy function (Player 0 uses `strategy0` and Player 1 uses `strategy1`). A *strategy* is a function that, given a player's score and their opponent's score, returns the number of dice that the current player will roll in the turn. An example strategy is `always_roll_5` which appears above `play`.
+
+To determine the updated score for a player after they take a turn, call the `update` function. An `update` function takes the number of dice to roll, the current player's score, the opponent's score, and the dice function used to simulate rolling dice. It returns the updated score of the current player after they take their turn. Two examples of `update` functions are `simple_update` and`sus_update`.
+
+If a player achieves the goal score by the end of their turn, i.e. after all applicable rules have been applied, the game ends. `play` will then return the final total scores of both players, with Player 0's score first and Player 1's score second.
+
+Some example calls to `play` are:
+
+- `play(always_roll_5, always_roll_5, simple_update)` simulates two players that both always roll 5 dice each turn, playing with just the Sow Sad and Boar Brawl rules.
+- `play(always_roll_5, always_roll_5, sus_update)` simulates two players that both always roll 5 dice each turn, playing with the Sus Fuss rule in addition to the Sow Sad and Boar Brawl rules (i.e. all the rules).
+
+> **Important:** For the user interface to work, a strategy function should be called only once per turn. Only call `strategy0` when it is Player 0's turn and only call `strategy1` when it is Player 1's turn.
+>
+> **Hints**:
+>
+> - If `who` is the current player, the next player is `1 - who`.
+> - To call `play(always_roll_5, always_roll_5, sus_update)` and print out what happens each turn, run `python3 hog_ui.py` from the terminal.
+
+Before writing any code, unlock the tests to verify your understanding of the question:
+
+```python
+python3 ok -q 05 -u
+```
+
+Once you are done unlocking, begin implementing your solution. You can check your correctness with:
+
+```python
+python3 ok -q 05
+```
+
+Check to make sure that you completed all the problems in Phase 1:
+
+```python
+python3 ok --score
+```
+
+Then, submit your work **to Gradescope** before the checkpoint deadline:
+
+When you run `ok` commands, you'll still see that some tests are locked because you haven't completed the whole project yet. You'll get full credit for the checkpoint if you complete all the problems up to this point.
+
+**Congratulations! You have finished Phase 1 of this project!**
