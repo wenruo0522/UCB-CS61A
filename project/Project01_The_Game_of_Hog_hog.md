@@ -292,3 +292,41 @@ Once you are done unlocking, begin implementing your solution. You can check you
 python3 ok -q 03
 ```
 
+### Problem 4 (2 pt)
+
+First, implement `num_factors`, which takes in a positive integer `n` and determines the number of factors that `n` has.
+
+> 1 and `n` are both factors of `n`!
+
+After, implement `sus_points` and `sus_update`.
+
+- `sus_points` takes in a player's score and returns the player's new score after applying the Sus Fuss rule (for example, `sus_points(5)` should return `5` and `sus_points(21)` should return `23`). You should use `num_factors` and the provided `is_prime` function in your implementation.
+- `sus_update` returns a player's total score after they roll `num_rolls` dice, taking both Boar Brawl and Sus Fuss into account. You should use `sus_points` in this function.
+
+> **Hint:** You can look at the implementation of `simple_update` provided in `hog.py` and use that as a starting point for your `sus_update` function.
+
+- **Sus Fuss**. We call a number [*sus*](https://en.wikipedia.org/wiki/Sus_(genus)) if it has exactly 3 or 4 factors, including 1 and the number itself. If, after rolling, the current player's score is a sus number, they gain enough points such that their score instantly increases to the next prime number.
+
+  - *Example 1:*
+    - A player has 14 points and rolls 2 dice that total 7 points. Their new score would be 21, which has 4 factors: 1, 3, 7, and 21. Because 21 is sus, the score of the player is increased to 23, the next prime number.
+  - *Example 2:*
+    - A player has 63 points and rolls 5 dice that total 1 point. Their new score would be 64, which has 7 factors: 1, 2, 4, 8, 16, 32, and 64. Since 64 is not sus, the score of the player is unchanged.
+  - *Example 3:*
+    - A player has 49 points and rolls 5 dice that total 18 points. Their new score would be 67, which is prime and has 2 factors: 1 and 67. Since 67 is not sus, the score of the player is unchanged.
+
+
+Before writing any code, unlock the tests to verify your understanding of the question:
+
+```python
+python3 ok -q 04 -u
+```
+
+Once you are done unlocking, begin implementing your solution. You can check your correctness with:
+
+```python
+python3 ok -q 04
+```
+
+
+
+  
