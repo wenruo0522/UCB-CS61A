@@ -273,3 +273,22 @@ python3 ok -q 02
 ```
 
 You can also test `boar_brawl` interactively by running `python3 -i hog.py` from the terminal and calling `boar_brawl` on various inputs.
+
+### Problem 3 (2 pt)
+
+Implement the `take_turn` function, which returns the number of points scored for a turn by rolling the given `dice` `num_rolls` times.
+
+Your implementation of `take_turn` should call both `roll_dice` and `boar_brawl` rather than repeating their implementations.
+
+Before writing any code, unlock the tests to verify your understanding of the question:
+
+```python
+python3 ok -q 03 -u
+```
+
+Once you are done unlocking, begin implementing your solution. You can check your correctness with:
+
+```python
+python3 ok -q 03
+```
+
