@@ -237,3 +237,39 @@ You will find that the previous expression may have a different result each time
 > Continue debugging your code and running the `ok` tests until they all pass.
 >
 > One more debugging tip: to start the interactive interpreter automatically upon failing an `ok` test, use `-i`. For example, `python3 ok -q 01 -i` will run the tests for question 1, then start an interactive interpreter with `hog.py` loaded if a test fails.
+
+### Problem 2 (2 pt)
+
+Implement `boar_brawl`, which takes the player's current score `player_score` and the opponent's current score `opponent_score`, and returns the number of points scored by Boar Brawl when the player rolls 0 dice.
+
+- **Boar Brawl**. A player who rolls zero dice scores three times the absolute difference between the tens digit of the opponent’s score and the ones digit of the current player’s score, or 1, whichever is higher. The ones digit refers to the rightmost digit and the tens digit refers to the second-rightmost digit. If a player's score is a single digit (less than 10), the tens digit of that player's score is 0.
+  - *Example 1:*
+    - The current player has `21` points and the opponent has `46` points, and the current player chooses to roll zero dice.
+    - The tens digit of the opponent's score is `4` and the ones digit of the current player's score is `1`.
+    - Therefore, the player gains `3 * abs(4 - 1) = 9` points.
+  - *Example 2:*
+    - The current player has `45` points and the opponent has `52` points, and the current player chooses to roll zero dice.
+    - The tens digit of the opponent's score is `5` and the ones digit of the current player's score is `5`.
+    - Since `3 * abs(5 - 5) = 0`, the player gains `1` point.
+  - *Example 3:*
+    - The current player has `2` points and the opponent has `5` points, and the current player chooses to roll zero dice.
+    - The tens digit of the opponent's score is `0` and the ones digit of the current player's score is `2`.
+    - Therefore, the player gains `3 * abs(0 - 2) = 6` points.
+
+> Don't assume that scores are below 100. Write your `boar_brawl` function so that it works correctly for any non-negative score.
+
+> **Important:** Your implementation should **not** use `str`, lists, or contain square brackets `[` `]`. The test cases will check if those have been used.
+
+Before writing any code, unlock the tests to verify your understanding of the question:
+
+```python
+python3 ok -q 02 -u
+```
+
+Once you are done unlocking, begin implementing your solution. You can check your correctness with:
+
+```python
+python3 ok -q 02
+```
+
+You can also test `boar_brawl` interactively by running `python3 -i hog.py` from the terminal and calling `boar_brawl` on various inputs.
