@@ -372,3 +372,49 @@ Then, submit your work **to Gradescope** before the checkpoint deadline:
 When you run `ok` commands, you'll still see that some tests are locked because you haven't completed the whole project yet. You'll get full credit for the checkpoint if you complete all the problems up to this point.
 
 **Congratulations! You have finished Phase 1 of this project!**
+
+## Interlude: User Interfaces
+
+> There are no required problems in this section of the project, just some examples for you to read and understand. See Phase 2 for the remaining project problems.
+
+### Printing Game Events
+
+We have built a simulator for the game, but haven't added any code to describe how the game events should be displayed to a person. Therefore, we've built a computer game that no one can play. (Lame!)
+
+However, the simulator is expressed in terms of small functions, and we can replace each function by a version that prints out what happens when it is called. Using higher-order functions, we can do so without changing much of our original code. An example appears in `hog_ui.py`, which you are encouraged to read.
+
+The `play_and_print` function calls the same `play` function just implemented, but using:
+
+- new strategy functions (e.g., `printing_strategy(0, always_roll_5)`) that print out the scores and number of dice rolled.
+- a new update function (`sus_update_and_print`) that prints the outcome of each turn.
+- a new dice function (`printing_dice(six_sided)`) that prints the outcome of rolling the dice.
+
+Notice how much of the original simulator code can be reused.
+
+Running `python3 hog_ui.py` from the terminal calls `play_and_print(always_roll_5, always_roll_5)`.
+
+### Accepting User Input
+
+The built-in `input` function waits for the user to type a line of text and then returns that text as a string. The built-in `int` function can take a string containing the digits of an integer and return that integer.
+
+The `interactive_strategy` function returns a strategy that let's a person choose how many dice to roll each turn by calling `input`.
+
+With this strategy, we can finally play a game using our `play` function:
+
+Running `python3 hog_ui.py -n 1` from the terminal calls `play_and_print(interactive_strategy(0), always_roll_5)`, which plays a game between a human (Player 0) and a computer strategy that always rolls 5.
+
+Running `python3 hog_ui.py -n 2` from the terminal calls `play_and_print(interactive_strategy(0), interactive_strategy(1))`, which plays a game between two human players.
+
+You are welcome to change `hog_ui.py` in any way you want, for example to use different strategies than `always_roll_5`.
+
+### Graphical User Interface (GUI)
+
+We have also provided a web-based graphical user interface for the game using a similar approach as `hog_ui.py` called `hog_gui.py`. You can run it from the terminal:
+
+```python
+python3 hog_gui.py
+```
+
+Like `hog_ui.py`, the GUI relies on your simulator implementation, so if you have any bugs in your code, they will be reflected in the GUI. This means you can also use the GUI as a debugging tool; however, it's better to run the tests first.
+
+The source code for the Hog GUI is [publicly available on Github](https://github.com/Cal-CS-61A-Staff/cs61a-apps/tree/master/hog) but involves several other programming languages: Javascript, HTML, and CSS.
