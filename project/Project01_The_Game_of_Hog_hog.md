@@ -439,3 +439,23 @@ Once you are done unlocking, begin implementing your solution. You can check you
 python3 ok -q 06
 ```
 
+### Problem 7 (2 pt)
+
+A strategy only has a fixed number of possible argument values. For example, in a game to 100, there are 100 possible `score` values (0-99) and 100 possible `opponent_score` values (0-99), giving 10,000 possible argument combinations.
+
+Implement `is_always_roll`, which takes a strategy and returns whether that strategy always rolls the same number of dice for every possible argument combination up to `goal` points.
+
+> **Reminder:** The game continues until one player reaches `goal` points (in the above example, `goal` is set to `100`). Make sure your solution accounts for every possible combination for the specified `goal` argument.
+
+Before writing any code, unlock the tests to verify your understanding of the question:
+
+```python
+python3 ok -q 07 -u
+```
+
+Once you are done unlocking, begin implementing your solution. You can check your correctness with:
+
+```python
+python3 ok -q 07
+```
+
