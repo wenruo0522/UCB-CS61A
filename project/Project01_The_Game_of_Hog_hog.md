@@ -524,3 +524,38 @@ Once you are done unlocking, begin implementing your solution. You can check you
 python3 ok -q 09
 ```
 
+### Running Experiments
+
+The provided `run_experiments` function calls `max_scoring_num_rolls(six_sided)` and prints the result. You will likely find that rolling 6 dice maximizes the result of `roll_dice` using six-sided dice.
+
+To call this function and see the result, run `hog.py` with the `-r` flag:
+
+```python
+python3 hog.py -r
+```
+
+In addition, `run_experiments` compares various strategies to `always_roll(6)`. You are welcome to change the implementation of `run_experiments` as you wish. Note that running experiments with `boar_strategy` and `sus_strategy` will not have accurate results until you implement them in the next two problems.
+
+Some of the experiments may take up to a minute to run. You can always reduce the number of trials in your call to `make_averaged` to speed up experiments.
+
+Running experiments won't affect your score on the project.
+
+### Problem 10 (2 pt)
+
+A strategy can try to take advantage of the *Boar Brawl* rule by rolling 0 when it is most beneficial to do so. Implement `boar_strategy`, which returns 0 whenever rolling 0 would give **at least** `threshold` points and returns `num_rolls` otherwise. This strategy should **not** also take into account the Sus Fuss rule.
+
+> **Hint**: You can use the `boar_brawl` function you defined in Problem 2.
+
+Before writing any code, unlock the tests to verify your understanding of the question:
+
+```python
+python3 ok -q 10 -u
+```
+
+Once you are done unlocking, begin implementing your solution. You can check your correctness with:
+
+```python
+python3 ok -q 10
+```
+
+You should find that running `python3 hog.py -r` now shows a win rate for `boar_strategy` close to 66-67%.
