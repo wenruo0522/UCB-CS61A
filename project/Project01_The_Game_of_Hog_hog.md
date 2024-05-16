@@ -418,3 +418,24 @@ python3 hog_gui.py
 Like `hog_ui.py`, the GUI relies on your simulator implementation, so if you have any bugs in your code, they will be reflected in the GUI. This means you can also use the GUI as a debugging tool; however, it's better to run the tests first.
 
 The source code for the Hog GUI is [publicly available on Github](https://github.com/Cal-CS-61A-Staff/cs61a-apps/tree/master/hog) but involves several other programming languages: Javascript, HTML, and CSS.
+
+## Phase 2: Strategies
+
+In this phase, you will experiment with ways to improve upon the basic strategy of always rolling five dice. A *strategy* is a function that takes two arguments: the current player's score and their opponent's score. It returns the number of dice the player will roll, which can be from 0 to 10 (inclusive).
+
+### Problem 6 (2 pt)
+
+Implement `always_roll`, a higher-order function that takes a number of dice `n` and returns a strategy that always rolls `n` dice. Thus, `always_roll(5)` would be equivalent to `always_roll_5`.
+
+Before writing any code, unlock the tests to verify your understanding of the question:
+
+```python
+python3 ok -q 06 -u
+```
+
+Once you are done unlocking, begin implementing your solution. You can check your correctness with:
+
+```python
+python3 ok -q 06
+```
+
