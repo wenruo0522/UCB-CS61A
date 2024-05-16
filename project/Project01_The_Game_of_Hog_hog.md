@@ -559,3 +559,25 @@ python3 ok -q 10
 ```
 
 You should find that running `python3 hog.py -r` now shows a win rate for `boar_strategy` close to 66-67%.
+
+### Problem 11 (2 pt)
+
+A better strategy will take advantage of both *Boar Brawl* and *Sus Fuss* in combination. For example, if a player has 53 points and their opponent has 60, rolling 0 would bring them to 62, which is a sus number, and so they would end the turn with 67 points: a gain of 67 - 53 = 14!
+
+The `sus_strategy` returns 0 whenever rolling 0 would result in a score that is **at least** `threshold` points more than the player's score at the start of turn.
+
+> **Hint**: You can use the `sus_update` function.
+
+Before writing any code, unlock the tests to verify your understanding of the question:
+
+```python
+python3 ok -q 11 -u
+```
+
+Once you are done unlocking, begin implementing your solution. You can check your correctness with:
+
+```python
+python3 ok -q 11
+```
+
+You should find that running `python3 hog.py -r` now shows a win rate for `sus_strategy` close to 67-69%.
