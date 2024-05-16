@@ -581,3 +581,36 @@ python3 ok -q 11
 ```
 
 You should find that running `python3 hog.py -r` now shows a win rate for `sus_strategy` close to 67-69%.
+
+### Optional: Problem 12 (0 pt)
+
+Implement `final_strategy`, which combines these ideas and any other ideas you have to achieve a high win rate against the baseline strategy. Some suggestions:
+
+- If you know the goal score (by default it is 100), there's no benefit to scoring more than the goal. Check whether you can win by rolling 0, 1 or 2 dice. If you are in the lead, you might decide to take fewer risks.
+- Instead of using a threshold, roll 0 whenever it would give you more points on average than rolling 6.
+
+You can check that your final strategy is valid by running `ok`.
+
+```python
+python3 ok -q 12
+```
+
+## Project submission
+
+Run `ok` on all problems to make sure all tests are unlocked and pass:
+
+```python
+python3 ok
+```
+
+You can also check your score on each part of the project:
+
+```python
+python3 ok --score
+```
+
+Once you are satisfied, submit this assignment by uploading `hog.py` **to Gradescope.** For a refresher on how to do this, refer to [Lab 00](https://cs61a.org/lab/lab00/#task-c-submitting-the-assignment).
+
+You can add a partner to your Gradescope submission by clicking on **+ Add Group Member** under your name on the right hand side of your submission. Only one partner needs to submit to Gradescope.
+
+**Congratulations, you have reached the end of your first CS 61A project!** If you haven't already, relax and enjoy a few games of Hog with a friend.
