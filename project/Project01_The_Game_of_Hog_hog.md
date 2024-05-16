@@ -459,3 +459,46 @@ Once you are done unlocking, begin implementing your solution. You can check you
 python3 ok -q 07
 ```
 
+### Problem 8 (2 pt)
+
+Implement `make_averaged`, which is a higher-order function that takes a function `original_function` as an argument.
+
+The return value of `make_averaged` is a function that takes in the same number of arguments as `original_function`. When we call this returned function on the arguments, it will return the average value of repeatedly calling `original_function` on the arguments passed in.
+
+Specifically, this function should call `original_function` a total of `samples_count` times and return the average of the results of these calls.
+
+> **Important:** To implement this function, you will need to use a new piece of Python syntax. We would like to write a function that accepts an arbitrary number of arguments, and then calls another function using exactly those arguments. Here's how it works.
+>
+> Instead of listing formal parameters for a function, you can write `*args`, which represents all of the **arg**ument**s** that get passed into the function. We can then call another function with these same arguments by passing these `*args` into this other function. For example:
+>
+> ```
+> >>> def printed(f):
+> ...     def print_and_return(*args):
+> ...         result = f(*args)
+> ...         print('Result:', result)
+> ...         return result
+> ...     return print_and_return
+> >>> printed_pow = printed(pow)
+> >>> printed_pow(2, 8)
+> Result: 256
+> 256
+> >>> printed_abs = printed(abs)
+> >>> printed_abs(-10)
+> Result: 10
+> 10
+> ```
+>
+> Here, we can pass any number of arguments into `print_and_return` via the `*args` syntax. We can also use `*args` inside our `print_and_return` function to make another function call with the same arguments.
+
+Before writing any code, unlock the tests to verify your understanding of the question:
+
+```python
+python3 ok -q 08 -u
+```
+
+Once you are done unlocking, begin implementing your solution. You can check your correctness with:
+
+```python
+python3 ok -q 08
+```
+
