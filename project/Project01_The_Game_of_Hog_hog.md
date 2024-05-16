@@ -502,3 +502,25 @@ Once you are done unlocking, begin implementing your solution. You can check you
 python3 ok -q 08
 ```
 
+### Problem 9 (2 pt)
+
+Implement `max_scoring_num_rolls`, which runs an experiment to determine the number of rolls (from 1 to 10) that gives the maximum average score for a turn. Your implementation should use `make_averaged` and `roll_dice`.
+
+If two numbers of rolls are tied for the maximum average score, return the lower number. For example, if both 3 and 6 achieve a maximum average score, return 3.
+
+You might find it useful to read the doctest and the example shown in the doctest for this problem before doing the unlocking test.
+
+> **Important:** In order to pass all of our tests, please make sure that you are testing dice rolls starting from 1 going up to 10, rather than from 10 to 1.
+
+Before writing any code, unlock the tests to verify your understanding of the question:
+
+```python
+python3 ok -q 09 -u
+```
+
+Once you are done unlocking, begin implementing your solution. You can check your correctness with:
+
+```python
+python3 ok -q 09
+```
+
