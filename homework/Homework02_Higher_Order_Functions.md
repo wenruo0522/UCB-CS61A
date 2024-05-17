@@ -191,3 +191,13 @@ python3 ok --score
 ```
 
 **This does NOT submit the assignment!** When you are satisfied with your score, submit the assignment to Gradescope to receive credit for it.
+
+## Exam Practice
+
+Here are some related questions from past exams for you to try. These are optional. There is no way to submit them.
+
+> Note that exams from Spring 2020, Fall 2020, and Spring 2021 gave students access to an interpreter, so the question format may be different than other years. Regardless, the questions below are good problems to try *without* access to an interpreter.
+
+1. Fall 2019 MT1 Q3: [You Again](./61a-fa19-mt1.pdf) [Higher-Order Functions]
+2. Spring 2021 MT1 Q4: [Domain on the Range](./61a-sp21-mt1.pdf) [Higher-Order Functions]
+3. Fall 2021 MT1 Q1b: [tik](./61a-fa21-mt1.pdf) [Functions and Expressions]
