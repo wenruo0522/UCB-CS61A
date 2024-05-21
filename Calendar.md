@@ -11,6 +11,7 @@
 | 3    | Wed 1/31 | Function Examples<kbd>[Slides](./slides/07-Function_Examples_1pp.pdf)</kbd> |                                                              | [Disc 02: Environment Diagrams, Higher-Order Functions](./discussion/Disc02_Environment_Diagrams_Higher_Order_Functions.pdf)<kbd>[Solutions](./offical-solutions/discussion/Disc02_Environment_Diagrams_Higher_Order_Functions.pdf)</kbd> |                                                              |
 | 3    | Fri 2/2  | Function Demos (Optional)                                    |                                                              |                                                              |                                                              |
 | 4    | Mon 2/5  | Midterm 1 (8pm-10pm)                                         |                                                              |                                                              |                                                              |
+| 4    | Wed 2/7  | Recursion<kbd>[Slides](./slides/09-Recursion_1pp.pdf)</kbd>  | <kbd>[ch1.7](https://www.composingprograms.com/pages/17-recursive-functions.html)</kbd> |                                                              |                                                              |
 
 
 
