@@ -21,5 +21,5 @@ SICP In Ptyhon && Fall 2020 &amp;&amp; Spring 2024
 - `offical-solutions:` 课程提供的官方解答，包括 `discussion` `homework` `lab`
 - `slides:` 课程对应的 `slides` 部分
 - `solutions:` 本人完成的解答，提供参考
-- `memo.md:` `Q&A` 中一些有意思的代码片段
+- `examples:` 课程中一些有趣的示例代码
 

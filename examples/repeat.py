@@ -1,8 +1,3 @@
-### Memo
-
-##### Higher-order function
-
-```python
 def repeat(k):
     """When called repeatedly, print each repeated argument.
 
@@ -30,5 +25,3 @@ def detector(have_seen):
 # have_seen1(j) = lambda j: j == 1 or have_seen0(j)
 # have_seen2(j) = lambda j: j == 7 or have_seen1(j)
 # ...
-```
-
