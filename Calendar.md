@@ -12,7 +12,8 @@
 | 3    | Fri 2/2  | Function Demos (Optional)                                    |                                                              |                                                              |                                                              |
 | 4    | Mon 2/5  | Midterm 1 (8pm-10pm)                                         |                                                              |                                                              |                                                              |
 | 4    | Wed 2/7  | Recursion<kbd>[Slides](./slides/09-Recursion_1pp.pdf)</kbd>  | <kbd>[ch1.7](https://www.composingprograms.com/pages/17-recursive-functions.html)</kbd> | [Disc 03: Recursion](./discussion/Disc03_Recursion.pdf)<kbd>[Solutions](./offical-solutions/discussion/Disc03_Recursion.pdf)</kbd> |                                                              |
+| 4    | Fri 2/9  | Tree Recursion<kbd>[Slides](./slides/10-Tree_Recursion_1pp.pdf)</kbd> | <kbd>[ch1.7](https://www.composingprograms.com/pages/17-recursive-functions.html)</kbd> |                                                              | [HW 03: Recursion, Tree Recursion]()                         |
 
-
+  
 
  
