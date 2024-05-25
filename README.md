@@ -1,11 +1,13 @@
 ### CS61A: Structure and Interpretation of Computer Programs
 
-SICP In Ptyhon && Fall 2020 &amp;&amp; Spring 2024
+SICP In Python
 
 ##### MATERIALS
 
-- 课程视频 [Fall 2020](https://www.bilibili.com/video/BV1s3411G7yM)，包括了所有的 Lecture && Lab && Homework 
-
+- 课程视频 
+  - [Fall 2020](https://www.bilibili.com/video/BV1s3411G7yM)，包括了所有的 Lecture && Lab && Homework && Discussion. 该视频合集带原文字幕，开启`B站`双语字幕为机翻。
+  - [Fall 2022](https://www.bilibili.com/video/BV1d142167qi/) , 该版本字幕为 `ChatGpt` 翻译，相对中文翻译质量会更好。
+  - 可以两种视频参考对比学习。
 - [Textbook](https://www.composingprograms.com/)
 - [中文翻译](https://composingprograms.netlify.app/)
 - [Course Site](https://cs61a.org/)
