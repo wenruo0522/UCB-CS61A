@@ -22,6 +22,6 @@ SICP In Python
 - `labs:` 课程对应的 `lab` 部分
 - `offical-solutions:` 课程提供的官方解答，包括 `discussion` `homework` `lab`
 - `slides:` 课程对应的 `slides` 部分
-- `solutions:` 本人完成的解答，提供参考
+- `solutions:` 本人完成的解答，尽量包括所有 `optional` 内容，提供参考
 - `examples:` 课程中一些有趣的示例代码
 
