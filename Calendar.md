@@ -14,6 +14,7 @@
 | 4    | Wed 2/7  | Recursion<kbd>[Slides](./slides/09-Recursion_1pp.pdf)</kbd>  | <kbd>[ch1.7](https://www.composingprograms.com/pages/17-recursive-functions.html)</kbd> | [Disc 03: Recursion](./discussion/Disc03_Recursion.pdf)<kbd>[Solutions](./offical-solutions/discussion/Disc03_Recursion.pdf)</kbd> |                                                              |
 | 4    | Fri 2/9  | Tree Recursion<kbd>[Slides](./slides/10-Tree_Recursion_1pp.pdf)</kbd> | <kbd>[ch1.7](https://www.composingprograms.com/pages/17-recursive-functions.html)</kbd> |                                                              | [HW 03: Recursion, Tree Recursion](./homework/Homework03_Recursion_Tree_Recursion.md)<kbd>[Solutions](./offical-solutions/homework/homework03/hw03.py)</kbd> |
 | 5    | Mon 2/12 | Sequences<kbd>[Slides](./slides/11-Sequences_1pp.pdf)</kbd>  | <kbd>[ch2.1](https://www.composingprograms.com/pages/21-introduction.html)</kbd> <kbd>[ch2.3](https://www.composingprograms.com/pages/23-sequences.html)</kbd> | [Lab 03: Recursion, Python Lists](./labs/Lab03_Recursion_Python_Lists.md)<kbd>[Solutions](./offical-solutions/lab/lab03/lab03.py)</kbd> |                                                              |
+| 5    | Wed 2/14 | Containers<kbd>[Slides](./slides/12-Containers_1pp.pdf)</kbd> | <kbd>[ch2.3](https://www.composingprograms.com/pages/23-sequences.html)</kbd> | [Disc 04: Tree Recursion](./discussion/Disc04_Tree_Recursion.pdf) |                                                              |
 
   
 
