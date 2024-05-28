@@ -181,3 +181,48 @@ You can try out the web-based graphical user interface (GUI) using the following
 python3 cats_gui.py
 ```
 
+# Phase 2: Autocorrect
+
+In the web-based GUI, there is an autocorrect button, but right now it doesn't do anything. Let's implement automatic correction of typos. Whenever the user presses the space bar, if the last word they typed doesn't match a word in the dictionary but is close to one, then that similar word will be substituted for what they typed.
+
+### Problem 5 (2 pts)
+
+Implement `autocorrect`, which takes a `typed_word`, a `word_list`, a `diff_function`, and a `limit`. The goal of `autocorrect` is to return the word in `word_list` that is closest to the provided `typed_word`.
+
+Specifically, `autocorrect` does the following:
+
+- If the `typed_word` is contained inside the `word_list`, `autocorrect` returns that word.
+- Otherwise, `autocorrect` returns the word from `word_list` that has the lowest difference from the provided `typed_word` based on the `diff_function`.
+- However, if the lowest difference between `typed_word` and any of the words in `word_list` is greater than `limit`, then `typed_word` is returned instead. That is, `limit` puts a "limit" on how bad of a typo can be corrected.
+
+**Note**: Assume that `typed_word` and all elements of `word_list` are lowercase and have no punctuation.
+
+> **Important**: If multiple strings in `word_list` are tied for the lowest difference from `typed_word`, `autocorrect` should return the string that appears closest to the front of `word_list`.
+
+A diff function takes in three arguments. The first is the `typed_word`, the second is the source word (in this case, a word from `word_list`), and the third argument is the `limit`. The output of the diff function, which is a number, represents the amount of difference between the two strings.
+
+Here is an example of a diff function that computes the minimum of `1 + limit` and the difference in length between the two input strings:
+
+```python
+>>> def length_diff(w1, w2, limit):
+...     return min(limit + 1, abs(len(w2) - len(w1)))
+>>> length_diff('mellow', 'cello', 10)
+1
+>>> length_diff('hippo', 'hippopotamus', 5)
+6
+```
+
+> **Hint**: Try using `max` or `min` with the optional `key` argument (which takes in a one-argument function). For example, `max([-7, 2, -1], key = abs)` would return `-7` since `abs(-7)` is greater than `abs(2)` and `abs(-1)`.
+
+Before writing any code, unlock the tests to verify your understanding of the question:
+
+```python
+python3 ok -q 05 -u
+```
+
+Once you are done unlocking, begin implementing your solution. You can check your correctness with:
+
+```python
+python3 ok -q 05
+```
+
