@@ -1,4 +1,4 @@
-# Discussion 1_Control_Environment_Diagrams
+# Discussion 1: Control Environment Diagrams
 
 ### **Q1: Race**
 

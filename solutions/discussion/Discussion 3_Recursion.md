@@ -1,4 +1,4 @@
-# Discussion 3_Recursion
+# Discussion 3: Recursion
 
 ### Q1: Swipe
 

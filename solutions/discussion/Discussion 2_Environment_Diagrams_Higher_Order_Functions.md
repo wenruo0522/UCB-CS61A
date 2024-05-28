@@ -1,4 +1,4 @@
-# Discussion 2_Environment_Diagrams_Higher_Order_Functions
+# Discussion 2: Environment Diagrams Higher Order Functions
 
 ### Q1: Warm Up
 
