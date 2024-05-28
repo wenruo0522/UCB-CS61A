@@ -129,3 +129,25 @@ Once you are done unlocking, begin implementing your solution. You can check you
 python3 ok -q 02
 ```
 
+### Problem 3 (2 pts)
+
+Implement `accuracy`, which takes a `typed` paragraph and a `source` paragraph. It returns the percentage of words in `typed` that exactly match the corresponding words in `source`. Case and punctuation must match as well. "Corresponding" here means that two words must occur at the same indices in `typed` and `source`; the first words of both must match, the second words of both must match, and so on.
+
+A *word* in this context is any sequence of characters separated from other words by whitespace, so treat "dog;" as a single word.
+
+If `typed` is longer than `source`, then the extra words in `typed` that have no corresponding word in `source` are all incorrect.
+
+If both `typed` and `source` are empty, then the accuracy is 100.0. If `typed` is empty but `source` is not empty, then the accuracy is zero. If `typed` is not empty but `source` is empty, then the accuracy is zero.
+
+Before writing any code, unlock the tests to verify your understanding of the question:
+
+```python
+python3 ok -q 03 -u
+```
+
+Once you are done unlocking, begin implementing your solution. You can check your correctness with:
+
+```python
+python3 ok -q 03
+```
+
