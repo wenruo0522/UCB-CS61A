@@ -492,3 +492,73 @@ Once you are done unlocking, begin implementing your solution. You can check you
 python3 ok -q 09
 ```
 
+### Problem 10 (2 pts)
+
+Implement `fastest_words`, which returns which words each player typed fastest. This function is called once all players have finished typing. It takes in a `match`.
+
+Specifically, the `fastest_words` function returns a list of lists of words, one list for each player, and within each list the words they typed the fastest (against all the other players). In the case of a tie, consider the earliest player in the list (the smallest player index) to be the one who typed it the fastest.
+
+For example consider the following match with the words `'Just'`, `'have'`, and `'fun'`. Player 0 typed `'fun'` the fastest (3 seconds), Player 1 typed `'Just'` the fastest (4 seconds), and they tied on the word `'have'` (both took 1 second) so we consider to Player 0 to be the fastest, because they are the earliest player in the list.
+
+```python
+>>> player_0 = [5, 1, 3]
+>>> player_1 = [4, 1, 6]
+>>> fastest_words(match(['Just', 'have', 'fun'], [player_0, player_1]))
+[['have', 'fun'], ['Just']]
+```
+
+The `match` argument is a `match` data abstraction, just like the one we returned in Problem 9.
+
+- You can access words in a `match` with the selector `get_word`, which takes in a `match` and the `word_index` (an integer).
+- In addition, you can access the time it took a player to type the word at a particular index using the `time` function, which takes takes an integer `player_num`, in addition to `match` and `word_index`.
+- With these two functions and a `match`, we can easily access the time it took any player to type any word!
+
+```python
+>>> player_0 = [5, 1, 3]
+>>> player_1 = [4, 1, 6]
+>>> ex_match = match(['Just', 'have', 'fun'], [player_0, player_1])
+>>> get_word(ex_match, 2)
+'fun'
+>>> time(ex_match, 0, 2)
+3
+```
+
+> **Important**: Be sure to use the `match` selectors when using a `match`. The tests will check that you are using the `match` data abstraction rather than assuming a particular data format.
+>
+> Make sure your implementation does not mutate the given player input lists. For the example above, calling `fastest_words` on `[player_0, player_1]` should **not** mutate `player_0` or `player_1`.
+
+Before writing any code, unlock the tests to verify your understanding of the question:
+
+```python
+python3 ok -q 10 -u
+```
+
+Once you are done unlocking, begin implementing your solution. You can check your correctness with:
+
+```python
+python3 ok -q 10
+```
+
+Congratulations! Now you can play against other students in the course. Set `enable_multiplayer` to `True` near the bottom of `cats.py` and type swiftly!
+
+```
+python3 cats_gui.py
+```
+
+# Project Submission
+
+Run `ok` on all problems to make sure all tests are unlocked and pass:
+
+```python
+python3 ok
+```
+
+You can also check your score on each part of the project:
+
+```python
+python3 ok --score
+```
+
+Once you are satisfied, submit this assignment by uploading `cats.py` to the **Cats** assignment on **Gradescope.** For a refresher on how to do this, refer to [Lab 00](https://cs61a.org/lab/lab00/#task-c-submitting-the-assignment).
+
+You can add a partner to your Gradescope submission by clicking on **+ Add Group Member** under your name on the right hand side of your submission. Only one partner needs to submit to Gradescope.
