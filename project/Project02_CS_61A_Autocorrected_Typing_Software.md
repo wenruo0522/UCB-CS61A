@@ -226,3 +226,56 @@ Once you are done unlocking, begin implementing your solution. You can check you
 python3 ok -q 05
 ```
 
+### Problem 6 (3 pts)
+
+Implement `feline_fixes`, which is a diff function that takes two strings. It returns the minimum number of characters that must be changed in the `typed` word in order to transform it into the `source` word. If the strings are not of equal length, the difference in lengths is added to the total.
+
+Here are some examples:
+
+```python
+>>> big_limit = 10
+>>> feline_fixes("nice", "rice", big_limit)    # Substitute: n -> r
+1
+>>> feline_fixes("range", "rungs", big_limit)  # Substitute: a -> u, e -> s
+2
+>>> feline_fixes("pill", "pillage", big_limit) # Don't substitute anything, length difference of 3.
+3
+>>> feline_fixes("goodbye", "good", big_limit) # Don't substitute anything, length difference of 3.
+3
+>>> feline_fixes("roses", "arose", big_limit)  # Substitute: r -> a, o -> r, s -> o, e -> s, s -> e
+5
+>>> feline_fixes("rose", "hello", big_limit)   # Substitute: r->h, o->e, s->l, e->l, length difference of 1.
+5
+```
+
+> **Important**: You may not use `while`, `for`, or list comprehensions in your implementation. Use recursion.
+
+If the number of characters that must change is greater than `limit`, then `feline_fixes` should return any number larger than `limit` and should minimize the amount of computation needed to do so.
+
+> Why is there a limit? We know that `autocorrect` will reject any `source` word whose difference with the `typed` word is greater than `limit`. It doesn't matter if the difference is greater than `limit` by 1 or by 100; autocorrect will reject it just the same. Therefore, as soon as we know the difference will be above `limit`, it makes sense to try to minimize extra computation, even if the returned difference won't be exactly correct.
+>
+> These two calls to `feline_fixes` should take about the same amount of time to evaluate:
+>
+> ```
+> >>> limit = 4
+> >>> feline_fixes("roses", "arose", limit) > limit
+> True
+> >>> feline_fixes("rosesabcdefghijklm", "arosenopqrstuvwxyz", limit) > limit
+> True
+> ```
+
+To ensure that you are correctly minimizing the amount of extra computation that is performed after the `limit` is reached, there is an autograder test that measures the performance of your solution based on the number of function calls that it makes. The test isn't perfect; using a helper function may cause this test to fail even if you are successfully avoiding extra computation.
+
+Before writing any code, unlock the tests to verify your understanding of the question:
+
+```python
+python3 ok -q 06 -u
+```
+
+Once you are done unlocking, begin implementing your solution. You can check your correctness with:
+
+```python
+python3 ok -q 06
+```
+
+Try turning on autocorrect in the GUI. Does it help you type faster? Are the corrections accurate?
