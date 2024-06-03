@@ -279,3 +279,76 @@ python3 ok -q 06
 ```
 
 Try turning on autocorrect in the GUI. Does it help you type faster? Are the corrections accurate?
+
+### Problem 7 (3 pts)
+
+Implement `minimum_mewtations`, which is a diff function that returns the minimum number of edit operations needed to transform the `typed` word into the `source` word.
+
+There are three kinds of edit operations, with some examples:
+
+1. Add a letter to `typed`.
+   - Adding `"k"` to `"itten"` gives us `"kitten"`.
+2. Remove a letter from `typed`.
+   - Removing `"s"` from `"scat"` givs us `"cat"`.
+3. Substitute a letter in `typed` for another.
+   - Substituting `"z"` with `"j"` in `"zaguar"` gives us `"jaguar"`.
+
+Each edit operation contributes 1 to the difference between two words.
+
+```python
+>>> big_limit = 10
+>>> minimum_mewtations("cats", "scat", big_limit)       # cats -> scats -> scat
+2
+>>> minimum_mewtations("purng", "purring", big_limit)   # purng -> purrng -> purring
+2
+>>> minimum_mewtations("ckiteus", "kittens", big_limit) # ckiteus -> kiteus -> kitteus -> kittens
+3
+```
+
+We have provided a template of an implementation in `cats.py`. You may modify the template however you want or delete it entirely.
+
+> **Hint:** This is a recursive function with three recursive calls. One of these recursive calls will be similar to the recursive call in `feline_fixes`. Additionally, you will need more than one base case to solve this problem.
+
+If the number of edits required is greater than `limit`, then `minimum_mewtations` should return any number larger than `limit` and should minimize the amount of computation needed to do so.
+
+> These two calls to `minimum_mewtations` should take about the same amount of time to evaluate:
+>
+> ```
+> >>> limit = 2
+> >>> minimum_mewtations("ckiteus", "kittens", limit) > limit
+> True
+> >>> minimum_mewtations("ckiteusabcdefghijklm", "kittensnopqrstuvwxyz", limit) > limit
+> True
+> ```
+
+To ensure that you are correctly minimizing the amount of extra computation that is performed after the `limit` is reached, there is an autograder test that measures the performance of your solution based on the number of function calls that it makes.
+
+Before writing any code, unlock the tests to verify your understanding of the question:
+
+```python
+python3 ok -q 07 -u
+```
+
+Once you are done unlocking, begin implementing your solution. You can check your correctness with:
+
+```python
+python3 ok -q 07
+```
+
+Try typing again. Are the corrections more accurate?
+
+```python
+python3 cats_gui.py
+```
+
+**Submit your Phase 1 and Phase 2 Checkpoint**
+
+Check to make sure that you completed all the problems in Phase 1 and Phase 2A:
+
+```python
+python3 ok --score
+```
+
+Then, submit `cats.py` to the **Cats Checkpoint** assignment on **Gradescope** before the checkpoint deadline.
+
+When you run `ok` commands, you'll still see that some tests are locked because you haven't completed the whole project yet. You'll get full credit for the checkpoint if you complete all the problems up to this point.
