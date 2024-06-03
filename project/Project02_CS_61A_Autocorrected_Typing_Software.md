@@ -352,3 +352,66 @@ python3 ok --score
 Then, submit `cats.py` to the **Cats Checkpoint** assignment on **Gradescope** before the checkpoint deadline.
 
 When you run `ok` commands, you'll still see that some tests are locked because you haven't completed the whole project yet. You'll get full credit for the checkpoint if you complete all the problems up to this point.
+
+### (Optional) Extension: Final Diff (0 pts)
+
+You may optionally design your own diff function called `final_diff`. Here are some ideas for making even more accurate corrections:
+
+- Take into account which additions and deletions are more likely than others. For example, it's much more likely that you'll accidentally leave out a letter if it appears twice in a row.
+- Treat two adjacent letters that have swapped positions as one change, not two.
+- Try to incorporate common misspellings.
+
+You can also set the limit you'd like your diff function to use by changing the value of the variable `FINAL_DIFF_LIMIT` in `cats.py`.
+
+You can check your `final_diff`'s success rate by running:
+
+# Phase 3: Multiplayer
+
+Typing is more fun with friends! You'll now implement multiplayer functionality, so that when you run `cats_gui.py` on your computer, it connects to the course server at [cats.cs61a.org](https://cats.cs61a.org/) and looks for someone else to race against.
+
+To race against a friend, 5 different programs will be running:
+
+- Your GUI, which is a program that handles all the text coloring and display in your web browser.
+- Your `cats_gui.py`, which is a web server that communicates with your GUI using the code you wrote in `cats.py`.
+- Your opponent's `cats_gui.py`.
+- Your opponent's GUI.
+- The CS 61A multiplayer server, which matches players together and passes messages around.
+
+When you type, your GUI uploads what you have typed to your `cats_gui.py` server, which computes how much progress you have made and returns a progress update. It also uploads a progress update to the multiplayer server, so that your opponent's GUI can display it.
+
+Meanwhile, your GUI display is always trying to keep current by asking for progress updates from `cats_gui.py`, which in turn requests that info from the multiplayer server.
+
+Each player has an `id` number that is used by the server to track typing progress.
+
+### Problem 8 (2 pts)
+
+Implement `report_progress`, which is called every time the user finishes typing a word. It takes a list of the words `typed`, a list of the words in the `source`, the user's `user_id`, and a `upload` function that is used to upload a progress report to the multiplayer server. There will never be more words in `typed` than in `source`.
+
+Your progress is a ratio of the words in the `source` that you have typed correctly, up to the first incorrect word, divided by the number of `source` words. For example, this example has a progress of `0.25`:
+
+```python
+report_progress(["Hello", "ths", "is"], ["Hello", "this", "is", "wrong"], ...)
+```
+
+Your `report_progress` function should do two things: upload a message to the multiplayer server and return the progress of the player with `user_id`.
+
+You can upload a message to the multiplayer server by calling the `upload` function on a two-element dictionary containing the keys `'id'` and `'progress'`. You should then return the player's progress, which is the ratio of words you computed.
+
+> **Hint:** See the dictionary below for an example of a potential input into the `upload` function. This dictionary represents a player with `user_id` 1 and `progress` 0.6.
+>
+> ```
+> {'id': 1, 'progress': 0.6}
+> ```
+
+Before writing any code, unlock the tests to verify your understanding of the question:
+
+```python
+python3 ok -q 08 -u
+```
+
+Once you are done unlocking, begin implementing your solution. You can check your correctness with:
+
+```python
+python3 ok -q 08
+```
+
