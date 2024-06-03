@@ -415,3 +415,80 @@ Once you are done unlocking, begin implementing your solution. You can check you
 python3 ok -q 08
 ```
 
+### Problem 9 (2 pts)
+
+Implement `time_per_word`, which takes in a list `words` and `timestamps_per_player`, a list of lists for each player with timestamps indicating when each player finished typing every individual word in `words`. It returns a `match` with the given information.
+
+A `match` is a *data abstraction* that represents a typing "match" between multiple players. Speficially, each `match` stores the instance variables `words` and `times`.
+
+- The `times` are stored as a list of lists of how long it took each player to type every word in `words`.
+- Specifically, `times[i][j]` indicates how long it took player `i` to type `words[j]`.
+
+For example, say `words = ['Hello', 'world']` and `times = [[5, 1], [4, 2]]`, then `[5, 1]` corresponds to the list of times for player 0, and `[4, 2]` corresponds to the list of times for player 1. Thus, player 0 took `5` units of time to write the word `'Hello'`.
+
+> **Important**: Be sure to use the `match` constructor when returning a `match`. The tests will check that you are using the `match` data abstraction rather than assuming a particular data format.
+>
+> For more information, you can read the definitions for the `match` constructor below or in `cats.py`. However, as with any data abstraction, we are only concerned with what our functions do rather than their specific implementations!
+
+#### Match Data Abstraction
+
+```python
+def match(words, times):
+    """A data abstraction containing all words typed and their times.
+
+    Arguments:
+        words: A list of strings, each string representing a word typed.
+        times: A list of lists for how long it took for each player to type
+            each word.
+            times[i][j] = time it took for player i to type words[j].
+
+    Example input:
+        words: ['Hello', 'world']
+        times: [[5, 1], [4, 2]]
+    """
+    assert all([type(w) == str for w in words]), 'words should be a list of strings'
+    assert all([type(t) == list for t in times]), 'times should be a list of lists'
+    assert all([isinstance(i, (int, float)) for t in times for i in t]), 'times lists should contain numbers'
+    assert all([len(t) == len(words) for t in times]), 'There should be one word per time.'
+    return {"words": words, "times": times}
+
+def get_word(match, word_index):
+    """A utility function that gets the word with index word_index"""
+    assert 0 <= word_index < len(get_all_words(match)), "word_index out of range of words"
+    return get_all_words(match)[word_index]
+
+def time(match, player_num, word_index):
+    """A utility function for the time it took player_num to type the word at word_index"""
+    assert word_index < len(get_all_words(match)), "word_index out of range of words"
+    assert player_num < len(get_all_times(match)), "player_num out of range of players"
+    return get_all_times(match)[player_num][word_index]
+
+def get_all_words(match):
+    """A selector function for all the words in the match"""
+    return match["words"]
+
+def get_all_times(match):
+    """A selector function for all typing times for all players"""
+    return match["times"]
+
+def match_string(match):
+    """A helper function that takes in a match data abstraction and returns a string representation of it"""
+    return f"match({get_all_words(match)}, {get_all_times(match)})"
+```
+
+Timestamps are cumulative and always increasing, while the values in `times` are **differences between consecutive timestamps for each player**.
+
+Here's an example: If `timestamps_per_player = [[1, 3, 5], [2, 5, 6]]`, the corresponding `times` attribute of the `match` would be `[[2, 2], [3, 1]]`. This is because the differences in timestamps are `(3-1)`, `(5-3)` for the first player and `(5-2)`, `(6-5)` for the second player. The first value of each list within `timestamps_per_player` represents the initial starting time for each player.
+
+Before writing any code, unlock the tests to verify your understanding of the question:
+
+```python
+python3 ok -q 09 -u
+```
+
+Once you are done unlocking, begin implementing your solution. You can check your correctness with:
+
+```python
+python3 ok -q 09
+```
+
