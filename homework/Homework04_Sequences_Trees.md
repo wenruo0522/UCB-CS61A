@@ -68,7 +68,11 @@ python3 ok -q deep_map
 
 This problem is based on one from Structure and Interpretation of Computer Programs [Section 2.2.2](https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/6515/sicp.zip/full-text/book/book-Z-H-15.html#%_sec_2.2.2).
 
+![mobile](./mobile.png)
+
 We are making a planetarium mobile. A [mobile](https://www.northwestnatureshop.com/wp-content/uploads/2015/04/AMSolarSystem.jpg) is a type of hanging sculpture. A binary mobile consists of two arms. Each arm is a rod of a certain length, from which hangs either a planet or another mobile. For example, the below diagram shows the left and right arms of Mobile A, and what hangs at the ends of each of those arms.
+
+![sculpture](./sculpture.png)
 
 We will represent a binary mobile using the data abstractions below.
 
