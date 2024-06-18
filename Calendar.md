@@ -19,6 +19,7 @@
 | 6    | Mon 2/19 | No Lecture: Presidents' Day                                  |                                                              | [Lab 04: Tree Recursion, Data Abstraction](./labs/Lab04_Tree_Recursion_Data_Abstraction.md)<kbd>[Solutions](./offical-solutions/lab/lab04/lab04.py)</kbd> |                                                              |
 | 6    | Wed 2/21 | Trees<kbd>[Slides](./slides/14-Trees_1pp.pdf)</kbd>          | <kbd>[ch2.3](https://www.composingprograms.com/pages/23-sequences.html)</kbd> | [Disc 05: Trees](./discussion/Disc05_Trees.pdf)<kbd>[Solutions](./offical-solutions/discussion/Disc05_Trees.pdf)</kbd> |                                                              |
 | 6    | Fri 2/23 | Mutability<kbd>[Slides](./slides/15-Mutability_1pp.pdf)</kbd> | <kbd>[ch2.4](https://www.composingprograms.com/pages/24-mutable-data.html)</kbd> |                                                              | [HW 04: Sequences, Trees](./homework/Homework04_Sequences_Trees.md)<kbd>[Solutions](./offical-solutions/homework/homework04/hw04.py)</kbd> |
+| 7    | Mon 2/26 | Iterators<kbd>[Slides](./slides/16-Iterators_1pp.pdf)</kbd>  | <kbd>[ch4.2](https://www.composingprograms.com/pages/42-implicit-sequences.html)</kbd> | [Lab 05: Iterators, Mutability](./labs/Lab05_Mutability_Iterators.md)<kbd>[Solutions](./offical-solutions/lab/lab05/lab05.py)</kbd> |                                                              |
 
   
 
